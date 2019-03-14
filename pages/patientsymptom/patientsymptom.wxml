@@ -1,0 +1,165 @@
+<!--pages/patientsymptom/patientsymptom.wxml-->
+<!-- 治疗后症状填写界面 -->
+<view class="weui-cells weui-cells_after-title">
+  <form bindsubmit="formSubmit">
+    
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">患者编号:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="患者编号" type="number" placeholder="请输入编号"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">开始治疗日期:</view>
+      </view>
+      <view class="weui-cell__bd">  
+        <picker name="开始治疗日期" mode="date" value="{{date}}"  bindchange="bindDate1Change">  
+          <view class="weui-input">  
+            {{dates1}}  
+          </view>  
+        </picker>  
+      </view>  
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">评估日期:</view>
+      </view>
+      <view class="weui-cell__bd">  
+        <picker name="评估日期" mode="date" value="{{date}}"  bindchange="bindDate2Change">  
+          <view class="weui-input">  
+            {{dates2}}  
+          </view>  
+        </picker>  
+      </view>  
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">疲乏:</view>
+      </view>
+      <radio-group class="radio-group" name="疲乏">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">早饱感:</view>
+      </view>
+      <radio-group class="radio-group" name="早饱感">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">腹部不适:</view>
+      </view>
+      <radio-group class="radio-group" name="腹部不适">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">活动力不佳:</view>
+      </view>
+      <radio-group class="radio-group" name="活动力不佳">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">注意力不佳:</view>
+      </view>
+      <radio-group class="radio-group" name="注意力不佳">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">夜间盗汗:</view>
+      </view>
+      <radio-group class="radio-group" name="夜间盗汗">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">皮肤瘙痒:</view>
+      </view>
+      <radio-group class="radio-group" name="皮肤瘙痒">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">骨痛:</view>
+      </view>
+      <radio-group class="radio-group" name="骨痛">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">发热:</view>
+      </view>
+      <radio-group class="radio-group" name="发热">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">体重下降:</view>
+      </view>
+      <radio-group class="radio-group" name="体重下降">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label1">其他特殊症状体征:</view>
+      </view>
+      <view class="weui-cell__bd1">
+        <textarea class="weui-textarea" name="其他特殊症状体征" placeholder="请输入..." style="height: 5.3em" />
+        <view class="weui-textarea-counter">0/150</view>
+      </view>
+    </view>  
+    
+    <button class="btn" form-type='submit'>提交</button>
+  
+  </form>
+</view>
+

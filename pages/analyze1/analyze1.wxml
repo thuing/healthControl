@@ -1,0 +1,7 @@
+<!--pages/analyze1/analyze1.wxml-->
+<!-- 白细胞折线分析图 -->
+<view class="container">
+  
+  <canvas canvas-id="line-canvas" id="line-canvas"></canvas>
+
+</view>

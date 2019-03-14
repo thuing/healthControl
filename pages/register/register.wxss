@@ -1,0 +1,33 @@
+@import "/style/weui.wxss";
+/* 患者按钮样式 */
+.patient {
+  left: 0;
+  right: 0;
+  margin:0 auto;  
+  color: #fff;
+  background-color: #40E0D0; 
+  font-size: 30rpx;
+  position: fixed;
+  bottom: 0rpx;
+  margin-bottom: 700rpx;
+  float: right;
+  width: 500rpx;
+}
+/* 医生按钮样式 */
+.doctor {
+  left: 0;
+  right: 0;
+  margin:0 auto;  
+  color: #fff;
+  background-color: #40E0D0; 
+  font-size: 30rpx;
+  position: fixed;
+  bottom: 0rpx;
+  margin-bottom: 600rpx;
+  float: right;
+  width: 500rpx;
+}
+/* 点击按钮样式 */
+.button-hover {
+  background-color: rgb(3, 196, 90);
+}

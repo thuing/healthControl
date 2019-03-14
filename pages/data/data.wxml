@@ -1,0 +1,93 @@
+<!--pages/data/data.wxml-->
+<!-- 患者血常规变化表格界面 -->
+<!-- 搜索框 -->
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <view class="weui-search-bar__text">按患者编号搜索</view>
+    </label>
+  </view>
+  <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>
+
+<view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+  <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <view>张三</view>
+    </view>
+  </navigator>
+  <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <view>李四</view>
+    </view>
+  </navigator>
+</view>
+
+<!-- 患者血常规变化表格 -->
+<view>
+  <view class='history-table-wrap'>
+    
+    <view class="table">
+      <view class="tr">
+        <view class="th th1">患者编号</view>
+        <view class="th th2"> 日期</view>
+        <view class="th th1">白细胞(WBC×10⁹)</view>
+        <view class="th th1">红细胞(RBC×10¹²)</view>
+        <view class="th th1">血红蛋白Hb(g/L)</view>
+        <view class="th th1">红细胞比积HCT(%)</view>
+        <view class="th th1">血小板(PLT×10⁹)</view>
+        <view class="th th3">治疗药物以及剂量调整情况</view>
+        
+      </view>
+      <view class="tr" wx:for="{{15}}">
+        <view class="td td1">12345</view>
+        <view class="td td2">2018/10/01</view>
+        <view class="td td1">1.1</view>
+        <view class="td td1">2.1</view>
+        <view class="td td1">1.2</view>
+        <view class="td td1">50%</view>
+        <view class="td td1">2.1</view>
+        <view class="td th3">剂量增加</view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 折线分析图按钮 -->
+<button class="analyzeBtn1" hover-class="button-hover" bindtap="onTapAnalyze1">
+  <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+  <view>白细胞折线分析图</view>
+</button>
+
+<button class="analyzeBtn2" hover-class="button-hover" bindtap="onTapAnalyze2">
+  <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+  <view>红细胞折线分析图</view>
+</button>
+
+<button class="analyzeBtn3" hover-class="button-hover" bindtap="onTapAnalyze3">
+  <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+  <view>血红蛋白折线分析图</view>
+</button>
+
+<button class="analyzeBtn4" hover-class="button-hover" bindtap="onTapAnalyze4">
+  <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+  <view>红细胞比积折线分析图</view>
+</button>
+
+<button class="analyzeBtn5" hover-class="button-hover" bindtap="onTapAnalyze5">
+  <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+  <view>血小板折线分析图</view>
+</button>
+
+
+
+

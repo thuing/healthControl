@@ -1,0 +1,13 @@
+<view class="margin-left__20 margin-right__20">
+  <view class="margin-top__20 margin-bottom__20 font-size__large">
+    <text>30天内访问人数</text>
+  </view>
+  <view class="flex__row">
+    <view class="flex__row align-items__center margin-bottom__20 margin-right__20">
+      <view class="width__30 height__30  margin-right__10 radius__30 bord__white bg-color__27A5C2"></view>
+      <text>访问人数</text>
+    </view>
+  </view>
+  <canvas canvas-id="line-canvas" id="line-canvas"></canvas>
+</view>
+

@@ -1,0 +1,46 @@
+<!--pages/treatment/treatment.wxml-->
+<!-- 患者就诊信息填写界面 -->
+<view>
+  <form bindsubmit="formSubmit">
+    
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">就诊卡号:</view>
+      </view>
+      <view class="weui-cell__bd1">
+        <input class="weui-input" name="就诊卡号" type="number" placeholder="请输入就诊卡号"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">医生编号:</view>
+      </view>
+      <view class="weui-cell__bd1">
+        <input class="weui-input" name="医生编号" type="number" placeholder="请输入编号"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      
+      <view class="weui-cell__hd">
+        <view class="weui-label">初诊日期:</view>
+      </view>
+
+      <view class="weui-cell__bd1">  
+        <picker name="日期" mode="date" value="{{date}}"  bindchange="bindDateChange">  
+          <view class="weui-input">  
+            {{dates}}  
+          </view>  
+        </picker>  
+      </view>  
+
+    </view> 
+
+    <button class="btn" form-type='submit'>提交</button>
+
+  </form>    
+</view>
+
+
+

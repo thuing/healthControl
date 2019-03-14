@@ -1,0 +1,36 @@
+<!--pages/symptomdata/symptomdata.wxml-->
+<!-- 患者治疗后症状表格 -->
+<view class='history-table-wrap'>
+  <view class="table">
+    <view class="tr">
+      <view class="th"> 开始治疗日期</view>
+      <view class="th">评估日期</view>
+      <view class="th th1">疲乏</view>
+      <view class="th th1">早饱感</view>
+      <view class="th th1">腹部不适</view>
+      <view class="th th1">活动力不佳</view>
+      <view class="th th1">注意力不佳</view>
+      <view class="th th1">夜间盗汗</view>
+      <view class="th th1">皮肤瘙痒</view>
+      <view class="th th1">骨痛</view>
+      <view class="th th1">发热</view>
+      <view class="th th1">体重下降</view>
+    </view>
+    <view class="tr" wx:for="{{10}}">
+      <view class="td">2018/10/01</view>
+      <view class="td">2018/10/02</view>
+      <view class="td td1">✔︎</view>
+      <view class="td td1">✔︎</view>
+      <view class="td td1">✘</view>
+      <view class="td td1">✔︎</view>
+      <view class="td td1">✔︎</view>
+      <view class="td td1">✘</view>
+      <view class="td td1">✔︎</view>
+      <view class="td td1">✔︎</view>
+      <view class="td td1">✘</view>
+      <view class="td td1">✔︎</view>
+    </view>
+  </view>
+</view>
+
+

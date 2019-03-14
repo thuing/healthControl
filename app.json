@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/me",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/patientinfo/patientinfo",
+    "pages/patientdata/patientdata",
+    "pages/patientsymptom/patientsymptom",
+    "pages/doctor/doctor",
+    "pages/data/data",
+    "pages/info/info",
+    "pages/symptom/symptom",
+    "pages/patientinterface/patientinterface",
+    "pages/treatment/treatment",
+    "pages/first/first",
+    "pages/doctorinterface/doctorinterface",
+    "pages/doctorinfo/doctorinfo",
+    "pages/normaldata/normaldata",
+    "pages/symptomdata/symptomdata",
+    "pages/analyze1/analyze1",
+    "pages/analyze2/analyze2",
+    "pages/analyze3/analyze3",
+    "pages/analyze4/analyze4",
+    "pages/analyze5/analyze5"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#40E0D0",
+    "navigationBarTitleText": "患者治疗反馈",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#FFFFFF",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#40E0D0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "患者填写",
+        "iconPath": "/images/患者填写.png",
+        "selectedIconPath": "/images/患者.png"
+      },
+      {
+        "pagePath": "pages/doctor/doctor",
+        "text": "医生查询",
+        "iconPath": "/images/医生查询.png",
+        "selectedIconPath": "/images/医生.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "/images/我的.png",
+        "selectedIconPath": "/images/我.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

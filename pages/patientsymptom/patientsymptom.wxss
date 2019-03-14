@@ -1,0 +1,62 @@
+/* pages/patientsymptom/patientsymptom.wxss */
+@import "/style/weui.wxss";
+/* 标签样式 */
+.weui-label{
+  font-size: 30rpx;
+  font-weight: 500;
+  width:140px;
+  word-wrap:break-word;
+  word-break:break-all
+}
+
+.weui-label1{
+  font-size: 30rpx;
+  font-weight: 500;
+  width:80px;
+  word-wrap:break-word;
+  word-break:break-all
+}
+
+/* 输入框样式 */
+.weui-input{
+  padding-left: 10px;
+  height: 5px;
+}
+
+.weui-cell__bd{
+  border:  1px solid rgb(176, 209, 206);
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.weui-cell__bd1{
+  border:  1px solid rgb(176, 209, 206);
+  border-radius: 5px;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 复选框样式 */
+.radio-group{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 提交按钮样式 */
+.btn{
+  left: 0;
+  right: 0;
+  margin:0 auto;  
+  color: #fff;
+  background-color: #40E0D0; 
+  font-size: 30rpx;
+  width: 500rpx;
+}

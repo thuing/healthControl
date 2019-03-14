@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<!-- 患者填写界面 -->
+
+<!-- 滑动视图 -->
+<view class="container1">
+
+  <swiper indicator-dots="{{indicatorDots}}" style="width:375px;height:210px" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>
+
+<!-- flex布局 -->
+<view class="container2">
+  <!-- 血常规变化 -->
+  <view class="placeholder1" bindtap='onTapBtn1' hover-class="button-hover">
+    <image src="{{'../../images/血常规.png'}}" style="margin-bottom: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+    <view>血常规变化</view>
+  </view>
+  <!-- 治疗后症状 -->
+  <view class="placeholder2" bindtap='onTapBtn2' hover-class="button-hover">
+    <image src="{{'../../images/症状.png'}}" style="margin-bottom: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+    <view>治疗后症状</view>
+  </view>
+
+  <!-- 患者血常规变化 -->
+  <view class="placeholder3" bindtap='onTapBtn3' hover-class="button-hover">血常规变化图表</view>  
+  <!-- 患者治疗后症状变化 -->      
+  <view class="placeholder4" bindtap='onTapBtn4' hover-class="button-hover">症状变化图表</view> 
+</view>
+
+
+
+
+
+
+        
+        

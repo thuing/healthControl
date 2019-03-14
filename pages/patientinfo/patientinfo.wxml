@@ -1,0 +1,76 @@
+<!--pages/patientinfo/patientinfo.wxml-->
+<!-- 患者个人信息填写界面 -->
+<view>
+  <form bindsubmit="formSubmit">
+    
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">患者编号:</view>
+      </view>
+      <view class="weui-cell__bd1">
+        <input class="weui-input" name="患者编号" type="number" placeholder="请输入编号"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">患者姓名:</view>
+      </view>
+      <view class="weui-cell__bd1">
+        <input class="weui-input" name="姓名" placeholder="请输入姓名"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      
+      <view class="weui-cell__hd">
+        <view class="weui-label">患者性别:</view>
+      </view>
+      
+      <radio-group name="性别" class="radio-group">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">患者年龄:</view>
+      </view>
+      <view class="weui-cell__bd1">
+        <input class="weui-input" name="年龄" type="number" maxlength="3" placeholder="请输入年龄"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">手机号码:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="number" maxlength="11" placeholder="请输入手机号" />
+      </view>
+      <view class="weui-cell__ft">
+        <form bindsubmit="checkSubmit">
+          <button class="weui-vcode-btn" form-type='submit'>获取验证码</button>
+        </form>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">验证码:</view>
+      </view>
+      <view class="weui-cell__bd1">
+        <input class="weui-input" name="年龄" type="number" maxlength="3" placeholder="请输入验证码"/>
+      </view>
+    </view>
+
+    <button class="btn" form-type='submit'>提交</button>
+
+  </form>
+</view>
+
+
+

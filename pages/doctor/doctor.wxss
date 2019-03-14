@@ -1,0 +1,57 @@
+/* pages/doctor/doctor.wxss */
+@import "/style/weui.wxss";
+
+.container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder1{
+    border: 1px solid;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background-color: rgb(240, 174, 174);
+    height: 100px;
+    width: 300px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.placeholder2{
+    border: 1px solid;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background-color: rgb(124, 248, 196);
+    height: 100px;
+    width: 300px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.placeholder3{
+    border: 1px solid;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background-color: rgb(154, 160, 247);
+    height: 100px;
+    width: 300px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.button-hover {
+  background-color:#40E0D0;
+}

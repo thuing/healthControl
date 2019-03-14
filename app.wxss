@@ -1,0 +1,19 @@
+/**app.wxss**/
+@import "/css/common.wxss";
+@import "/css/font.wxss";
+@import "/css/color.wxss";
+@import "/css/dimens.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.weui-cells__title{
+  color:aqua;
+}

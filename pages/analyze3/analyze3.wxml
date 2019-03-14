@@ -1,0 +1,5 @@
+<!--pages/analyze3/analyze3.wxml-->
+<!-- 血红蛋白折线分析图 -->
+<view class="container">
+  <canvas canvas-id="line-canvas" id="line-canvas"></canvas>
+</view>

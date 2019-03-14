@@ -1,0 +1,9 @@
+<!--pages/doctor/doctor.wxml-->
+<!-- 医生查询界面 -->
+<view class="container">
+  <view class="placeholder1" bindtap='onTapBtn1' hover-class="button-hover">患者个人信息表格</view>
+  <view class="placeholder2" bindtap='onTapBtn2' hover-class="button-hover">患者血常规变化表格</view>        
+  <view class="placeholder3" bindtap='onTapBtn3' hover-class="button-hover">患者治疗后症状表格</view>      
+</view>
+
+

@@ -1,0 +1,109 @@
+/* pages/normaldata/normaldata.wxss */
+@import "/lib/weui.wxss";
+
+/* 表格代码 */
+.history-table-wrap{
+  height: 90%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+.table{
+  border:1px solid #dadada;
+  border-right:0;
+  border-bottom: 0;
+  width: 100%;
+}
+.tr{
+  width:250%;
+  display: flex;
+  justify-content: space-between;
+}
+.th,.td{
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width: 100%;
+}
+.th1,.td1{
+  width: 10%;
+}
+.th2,.td2{
+  width: 20%;
+}
+.th3,.td3{
+  width: 30%;
+}
+.th{
+  background-color:#40E0D0;
+  font-size: 25rpx;
+  font-weight: 700;
+  color: white;
+}
+.td{
+  font-size: 25rpx;
+  color: rgb(0, 0, 0);
+}
+
+/* 按钮样式 */
+.analyzeBtn1{
+  margin-top:20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  color: #fff;
+  background-color: #40E0D0; 
+  font-size: 30rpx;
+  width: 500rpx;
+}
+
+.analyzeBtn2{
+  margin-top:10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  color: #fff;
+  background-color: #40E0D0; 
+  font-size: 30rpx;
+  width: 500rpx;
+}
+
+.analyzeBtn3{
+  margin-top:10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  color: #fff;
+  background-color: #40E0D0; 
+  font-size: 30rpx;
+  width: 500rpx;
+}
+
+.analyzeBtn4{
+  margin-top:10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  color: #fff;
+  background-color: #40E0D0; 
+  font-size: 30rpx;
+  width: 500rpx;
+}
+
+.analyzeBtn5{
+  margin-top:10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  color: #fff;
+  background-color: #40E0D0; 
+  font-size: 30rpx;
+  width: 500rpx;
+}

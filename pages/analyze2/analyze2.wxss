@@ -1,0 +1,11 @@
+/* pages/analyze2/analyze2.wxss */
+#line-canvas {
+  width: 710rpx;
+  height: 400rpx;
+  background: #40E0D0;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

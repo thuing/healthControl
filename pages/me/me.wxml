@@ -1,0 +1,21 @@
+<!--pages/me/me.wxml-->
+<!-- "我的"界面 -->
+
+<!-- 医院图标 -->
+<view class="con">
+  <image src="{{'/images/医院图标.png'}}" class="image"/>
+</view>
+
+<!-- 登录按钮 -->
+<button class="loginbtn"  size="default" hover-class="button-hover" bindtap="onTapLogin">
+  <image src="{{'../../images/微信.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+  <view>微信一键登录</view>
+</button>
+
+
+
+
+
+
+
+

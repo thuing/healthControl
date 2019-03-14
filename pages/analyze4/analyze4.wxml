@@ -1,0 +1,5 @@
+<!--pages/analyze4/analyze4.wxml-->
+<!-- 红细胞比积折线分析图 -->
+<view class="container">
+  <canvas canvas-id="line-canvas" id="line-canvas"></canvas>
+</view>

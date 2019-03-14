@@ -1,0 +1,89 @@
+<!--pages/patientdata/patientdata.wxml-->
+<!-- 患者血常规填写界面 -->
+<view class="weui-cells weui-cells_after-title">
+  <form bindsubmit="formSubmit">
+    
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">患者编号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="患者编号" type="number" placeholder="请输入编号"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">日期</view>
+      </view>
+      <view class="weui-cell__bd">  
+        <picker name="日期" mode="date" value="{{date}}"  bindchange="bindDateChange">  
+          <view class="weui-input">  
+            {{dates}}  
+          </view>  
+        </picker>  
+      </view>  
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">白细胞(WBC×10⁹):</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="白细胞(WBC×10⁹)" type="digit"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">红细胞(RBC×10¹²):</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="红细胞(RBC×10¹²)" type="digit"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">血红蛋白Hb(g/L):</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="血红蛋白Hb(g/L)" type="digit"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">红细胞比积HCT(%):</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="红细胞比积HCT(%)" type="digit"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">血小板(PLT×10⁹):</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="血小板(PLT×10⁹)" type="digit"/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      
+      <view class="weui-cell__hd">
+        <view class="weui-label1">治疗药物以及剂量调整情况:</view>
+      </view>
+      
+      <view class="weui-cell__bd1">
+        <textarea class="weui-textarea" name="治疗药物以及剂量调整情况" placeholder="请输入..." style="height: 5.3em" />
+        <view class="weui-textarea-counter">0/150</view>
+      </view>
+
+    </view>
+    
+    <button class="btn" form-type='submit'>提交</button>
+  
+  </form>
+</view>
