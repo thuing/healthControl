@@ -17,3 +17,37 @@
 .weui-cells__title{
   color:aqua;
 }
+
+.menu-item{  
+  width: 40%;  
+  float: left;  
+  text-align: center;  
+  padding-top: 8px;  
+}  
+.menu-item1{  
+  width: 40%;  
+  float: left;  
+  text-align: center;  
+  padding-top: 8px;  
+}  
+.img{ 
+  width: 23px;  
+  height: 23px;  
+  display: block;  
+  margin:auto;  
+}  
+.clear{  
+  clear: both;  
+}  
+.tab-bar{  
+  position: fixed;  
+  width: 100%;  
+  padding: 0px 10%; 
+  background-color: #40E0D0; 
+}  
+ 
+.button{
+  margin: 130px;
+}
+
+

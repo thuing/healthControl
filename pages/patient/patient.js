@@ -1,16 +1,13 @@
-//index.js
-
-
+// pages/patient/patient.js
 var app = getApp();
 
 Page({
+  onLoad: function () {
+    //加载本页面的tabBar样式
+    app.editTabBar();
+  },
+
   data: {
-    onLoad: function () {
-      //加载本页面的tabBar样式
-      app.editTabBar();
-    },
-         
-         
     //滑动视图图片
     imgUrls: [
       '/images/医院1.png',
@@ -22,13 +19,13 @@ Page({
     autoplay: true,
     interval: 2000,
     duration: 500,
-    circular:true
+    circular: true
   },
   //患者血常规变化按钮页面跳转
   onTapBtn1() {
-    wx.navigateTo({
-      url: '/pages/patientdata/patientdata',
-    })
+        wx.navigateTo({
+          url: '/pages/patientdata/patientdata',
+        })
   },
   //患者治疗后症状按钮页面跳转
   onTapBtn2() {
@@ -47,7 +44,7 @@ Page({
         });
       }
     })
-    
+
     wx.navigateTo({
       url: '/pages/patientsymptom/patientsymptom',
     })
@@ -67,7 +64,5 @@ Page({
       url: '/pages/symptomdata/symptomdata',
     })
   },
-
-
 
 })

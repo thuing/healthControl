@@ -1,5 +1,12 @@
 // pages/doctor/doctor.js
+
+var app = getApp();
+
 Page({
+  onLoad: function () {
+    //加载本页面的tabBar样式
+    app.editTabBar1();
+  },
   //患者个人信息表格页面跳转
   onTapBtn1() {
     wx.navigateTo({

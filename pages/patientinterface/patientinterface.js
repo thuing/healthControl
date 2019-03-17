@@ -1,4 +1,4 @@
-// pages/personalinterface/personalinterface.js
+// pages/patientinterface/patientinterface.js
 Page({
   data: {
     menuitems: [

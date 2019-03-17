@@ -107,6 +107,106 @@ Page({
         }
       }
     });
+  },
+
+  //button回调
+  onGotUserInfo(e) {
+    var _this = this;
+    if (e.detail.userInfo) {
+      wx.setStorage({
+        key: "userInfo",
+        data: e.detail.userInfo,
+        success() {
+          _this.login()
+        }
+      })
+    } else {
+      wx.navigateBack({
+        delta: 0
+      })
+    }
+  },
+
+  login() {
+    var _this = this;
+    var user = wx.getStorageSync('user');//登录过后，用户信息会缓存
+    if (!user) {//没有登录
+      _this.getShouquanInfo();
+    }
+
+  },
+
+  //去登录页登录
+  gotoLoginPage() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+  },
+
+  //看是否授权
+  getShouquanInfo() {
+    var _this = this;
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.userInfo']) {
+          _this.gotoLoginPage();
+        } else {
+          _this.loginApi();
+        }
+      }
+    })
+  },
+
+  //执行登录
+  loginApi() {
+    var _this = this;
+    wx.login({
+      success(res) {
+        _this.getOpentId(res.code);
+      }
+    })
+  },
+
+  //获取openId http://123.56.203.175:8080/WXSmallProgram_Jiekou/SmallProgramWXGetOpenid_Jiekou.aspx?code=
+  getOpentId(code) {
+    var _this = this;
+    wx.request({
+      url: "接口地址",
+      data: {
+        code: code
+      },
+      success(res) {
+        _this.realLogin(res.data.unionid);
+      }
+    })
+  },
+
+  //请求登录接口
+  realLogin(name) {
+    var userInfo = wx.getStorageSync('userInfo');
+    wx.request({
+      url: "接口地址",
+      data: {
+        type: "wx",
+        user_name: name,
+        user_nincheng: userInfo.nickName,
+        user_touxing: userInfo.avatarUrl,
+        user_sex: userInfo.gender
+      },
+      success(res) {
+        wx.setStorage({
+          key: 'user',
+          data: res.data,
+          success() {
+            wx.navigateBack({
+              delta: 1
+            })
+          }
+        })
+      }
+    })
   }
+
+
 })
 

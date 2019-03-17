@@ -33,8 +33,108 @@ App({
       }
     })
   },
+  
   globalData: {
-    userInfo: null
+    userInfo: null,
+    userIdentity: "null"
+  },
+
+  //第一种底部  
+  editTabBar: function () {
+    //使用getCurrentPages可以获取当前加载中所有的页面对象的一个数组，数组最后一个就是当前页面。
+    console.log("the patient func is used")
+    var curPageArr = getCurrentPages();    //获取加载的页面
+    var curPage = curPageArr[curPageArr.length - 1];    //获取当前页面的对象
+    var pagePath = curPage.route;    //当前页面url
+    if (pagePath.indexOf('/') != 0) {
+      pagePath = '/' + pagePath;
+    }
+
+    var tabBar = this.globalData.tabBar;
+    for (var i = 0; i < tabBar.list.length; i++) {
+      tabBar.list[i].active = false;
+      if (tabBar.list[i].pagePath == pagePath) {
+        tabBar.list[i].active = true;    //根据页面地址设置当前页面状态    
+      }
+    }
+    curPage.setData({
+      tabBar: tabBar
+    });
+  },
+  //第二种底部，原理同上
+  editTabBar1: function () {
+    console.log("the func is used")
+    var curPageArr = getCurrentPages();
+    var curPage = curPageArr[curPageArr.length - 1];
+    var pagePath = curPage.route;
+    if (pagePath.indexOf('/') != 0) {
+      pagePath = '/' + pagePath;
+    }
+    var tabBar = this.globalData.tabBar1;
+    for (var i = 0; i < tabBar.list.length; i++) {
+      tabBar.list[i].active = false;
+      if (tabBar.list[i].pagePath == pagePath) {
+        tabBar.list[i].active = true;
+      }
+    }
+    curPage.setData({
+      tabBar: tabBar
+    });
+  },
+  globalData: {
+    //第一种底部导航栏显示
+    tabBar: {
+          "color": "#FFFFFF",
+          "selectedColor": "#1296db",
+          "backgroundColor": "#40E0D0",
+          "list": [
+            {
+              "pagePath": "/pages/patient/patient",
+              "text": "患者填写",
+              "iconPath": "/images/患者填写.png",
+              "selectedIconPath": "/images/患者.png",
+              "clas": "menu-item",
+              active: true
+            },
+            {
+              "pagePath": "/pages/patientinterface/patientinterface",
+              "text": "我的",
+              "iconPath": "/images/我的.png",
+              "selectedIconPath": "/images/我.png",
+              "clas": "menu-item",
+              active: false
+            }
+            ],
+      "position": "bottom"
+    },
+
+    //第二种底部导航栏显示
+    tabBar1: {
+      "color": "#FFFFFF",
+      "backgroundColor": "#40E0D0",
+      "selectedColor": "#1296db",
+      "list": [
+        {
+          "pagePath": "/pages/doctor/doctor",
+          "text": "医生查询",
+          "iconPath": "/images/医生查询.png",
+          "selectedIconPath": "/images/医生.png",
+          "clas": "menu-item1",
+          active: true
+        },
+        {
+          "pagePath": "/pages/doctorinterface/doctorinterface",
+          "text": "我的",
+          "iconPath": "/images/我的.png",
+          "selectedIconPath": "/images/我.png",
+          "clas": "menu-item1",
+          active: false
+        }
+      ],
+      "position": "bottom"
+    }
   }
+
+
 })
 

@@ -1,4 +1,4 @@
-/* pages/personalinterface/personalinterface.wxss */
+/* pages/patientinterface/patientinterface.wxss */
 @import "/style/weui.wxss";
 /* 头像样式 */
 .avatar-wrapper {

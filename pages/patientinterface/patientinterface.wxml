@@ -1,4 +1,4 @@
-<!--pages/personalinterface/personalinterface.wxml-->
+<!--pages/patientinterface/patientinterface.wxml-->
 <!-- 患者身份界面 -->
 <view class="avatar-wrapper">
   <view>

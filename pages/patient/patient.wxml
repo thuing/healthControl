@@ -1,8 +1,9 @@
-<!--index.wxml-->
+<!--pages/patient/patient.wxml-->
 <!-- 患者填写界面 -->
+
  <import src="../template/tabbar.wxml"/> 
  <template is="tabBar" data="{{tabBar}}"/>
-
+ 
 <!-- 滑动视图 -->
 <view class="container1">
 
@@ -42,3 +43,4 @@
 
         
         
+
