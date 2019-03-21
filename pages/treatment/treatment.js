@@ -39,5 +39,8 @@ Page({
       duration: 1000
     });
     console.log(e.detail.value)
+    wx.navigateBack({
+      delta: 2
+    })
   }
 })

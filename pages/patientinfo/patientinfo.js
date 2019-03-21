@@ -20,6 +20,9 @@ Page({
       duration: 1000
     });
     console.log(e.detail.value)
+    wx.navigateBack({
+      delta: 2
+    })
   },
   //验证码按钮绑定事件
   checkSubmit: function () {

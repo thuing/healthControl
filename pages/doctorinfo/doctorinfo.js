@@ -14,6 +14,9 @@ Page({
       duration: 1000
     });
     console.log(e.detail.value)
+    wx.navigateBack({
+      delta: 2
+    })
   },
   //“获取验证码”按钮绑定事件
   checkSubmit: function () {
