@@ -19,7 +19,12 @@ Page({
     wx.redirectTo({
       url: '/pages/doctor/doctor',
     })
-  }
+  },
+
+  onUnload: function () {
+    console.log('App onHide');
+
+  },
 
 
 })

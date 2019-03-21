@@ -1,5 +1,14 @@
 // pages/patientinterface/patientinterface.js
+
+var app = getApp();
+
 Page({
+
+  onLoad: function () {
+    //加载本页面的tabBar样式
+    app.editTabBar();
+  },
+
   data: {
     menuitems: [
       { text: '患者个人信息填写', url: '/pages/patientinfo/patientinfo', icon: '/images/个人信息.png', tips: '' },

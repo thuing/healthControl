@@ -13,9 +13,6 @@ Page({
       icon: 'success',
       duration: 1000
     });
-    wx.redirectTo({
-      url: '/pages/doctor/doctor',
-    })
     console.log(e.detail.value)
   },
   //“获取验证码”按钮绑定事件

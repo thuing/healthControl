@@ -91,7 +91,7 @@ App({
           "list": [
             {
               "pagePath": "/pages/patient/patient",
-              "text": "患者填写",
+              "text": "首页",
               "iconPath": "/images/患者填写.png",
               "selectedIconPath": "/images/患者.png",
               "clas": "menu-item",
@@ -112,12 +112,12 @@ App({
     //第二种底部导航栏显示
     tabBar1: {
       "color": "#FFFFFF",
-      "backgroundColor": "#40E0D0",
       "selectedColor": "#1296db",
+      "backgroundColor": "#40E0D0",
       "list": [
         {
           "pagePath": "/pages/doctor/doctor",
-          "text": "医生查询",
+          "text": "首页",
           "iconPath": "/images/医生查询.png",
           "selectedIconPath": "/images/医生.png",
           "clas": "menu-item1",

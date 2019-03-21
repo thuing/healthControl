@@ -94,7 +94,7 @@ Page({
         console.log(res);
         if (res.confirm) {
           //点击“授权”按钮
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/register/register',
           })
         } else {
@@ -205,7 +205,12 @@ Page({
         })
       }
     })
-  }
+  },
+
+  onUnload: function () {
+    console.log('App onHide');
+
+  },
 
 
 })

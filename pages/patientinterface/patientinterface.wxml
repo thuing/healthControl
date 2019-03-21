@@ -1,4 +1,7 @@
 <!--pages/patientinterface/patientinterface.wxml-->
+<!-- tabbar 模版 -->
+ <import src="../template/tabbar.wxml"/> 
+ <template is="tabBar" data="{{tabBar}}"/>
 <!-- 患者身份界面 -->
 <view class="avatar-wrapper">
   <view>

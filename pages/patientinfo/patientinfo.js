@@ -20,9 +20,6 @@ Page({
       duration: 1000
     });
     console.log(e.detail.value)
-    wx.redirectTo({
-      url: '/pages/patient/patient',
-    })
   },
   //验证码按钮绑定事件
   checkSubmit: function () {
