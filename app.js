@@ -61,6 +61,7 @@ App({
       tabBar: tabBar
     });
   },
+  
   //第二种底部，原理同上
   editTabBar1: function () {
     console.log("the func is used")

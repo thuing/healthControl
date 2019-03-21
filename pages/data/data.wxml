@@ -47,7 +47,7 @@
         <view class="th th3">治疗药物以及剂量调整情况</view>
         
       </view>
-      <view class="tr" wx:for="{{15}}">
+      <view class="tr" wx:for="{{10}}">
         <view class="td td1">12345</view>
         <view class="td td2">2018/10/01</view>
         <view class="td td1">1.1</view>
