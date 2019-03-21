@@ -3,7 +3,7 @@ var app = getApp();
 Page({
   onLoad: function () {
     //加载本页面的tabBar样式
-    app.editTabBar();
+    app.editTabBar1();
   },
   data: {
     menuitems: [
