@@ -9,8 +9,8 @@
         <view>申请获取以下权限</view>
         <text>获得你的公开信息(昵称，头像等)</text>
     </view>
- 
-    <button class='button' hover-class="button-hover" bindtap="openConfirm" open-type="getUserInfo" >
+ <!-- bindtap="openConfirm"  -->
+    <button class='button' hover-class="button-hover" open-type="getUserInfo" bindgetuserinfo='doLogin' >
         授权登录
     </button>
 </view>

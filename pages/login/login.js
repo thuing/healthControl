@@ -1,4 +1,5 @@
 // pages/login/login.js
+const app = getApp()
 Page({
   data: {
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
@@ -212,6 +213,39 @@ Page({
 
   },
 
+
+  // 授权登录
+  doLogin:function(e){
+
+      var that = this;
+      if (!e.detail.userInfo) {
+        app.alert({ 'content': '登录失败，请再次点击~~' });
+        return;
+      }
+      wx.login({
+        success: function(res){
+          console.log(res)
+          // 获取登录的临时凭证
+          var code = res.code;
+          // 调用后端，获取信息
+          wx.request({
+            // URL需换成本地的 
+            url: 'https://xueyoutong.xyz/member/login',
+            method: 'POST',
+            date: code,
+            success: function (res) {
+              console.log(res)
+              if (code != 200) {
+                app.alert({ 'content': res.data.msg });
+                return;
+              }
+              app.setCache("token", res.data.data.token);
+            }
+          })
+        }
+      })
+       
+  }
 
 })
 
