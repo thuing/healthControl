@@ -32,27 +32,27 @@
 <!-- 折线分析图按钮 -->
 <button class="analyzeBtn1" hover-class="button-hover" bindtap="onTapAnalyze1">
   <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-  <view>白细胞折线分析图</view>
+  <view>白细胞折线分析</view>
 </button>
 
 <button class="analyzeBtn2" hover-class="button-hover" bindtap="onTapAnalyze2">
   <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-  <view>红细胞折线分析图</view>
+  <view>红细胞折线分析</view>
 </button>
 
 <button class="analyzeBtn3" hover-class="button-hover" bindtap="onTapAnalyze3">
   <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-  <view>血红蛋白折线分析图</view>
+  <view>血红蛋白折线分析</view>
 </button>
 
 <button class="analyzeBtn4" hover-class="button-hover" bindtap="onTapAnalyze4">
   <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-  <view>红细胞比积折线分析图</view>
+  <view>红细胞比积折线分析</view>
 </button>
 
 <button class="analyzeBtn5" hover-class="button-hover" bindtap="onTapAnalyze5">
   <image src="{{'../../images/折线.png'}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-  <view>血小板折线分析图</view>
+  <view>血小板折线分析</view>
 </button>
 
 

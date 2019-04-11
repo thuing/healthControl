@@ -37,8 +37,16 @@ Page({
     wx.showToast({
       title: '提交成功',
       icon: 'success',
-      duration: 1000
+      duration: 1000,
+      success: function(){
+        setTimeout(function (){
+          wx.navigateBack({
+            delta: 2
+          })
+        }, 1000)// 延时时间
+      }
     });
     console.log(e.detail.value)
+    
   }
 })

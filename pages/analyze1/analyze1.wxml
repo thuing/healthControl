@@ -3,5 +3,6 @@
 <view class="container">
   
   <canvas canvas-id="line-canvas" id="line-canvas"></canvas>
+  <view class="weui-label">医生编号:</view>
 
 </view>

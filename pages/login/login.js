@@ -219,7 +219,7 @@ Page({
 
       var that = this;
       if (!e.detail.userInfo) {
-        app.alert({ 'content': '登录失败，请再次点击~~' });
+        app.alert({ 'content': '登录失败，请再次点击' });
         return;
       }
       wx.login({
@@ -236,6 +236,9 @@ Page({
             success: function (res) {
               console.log(res)
               if (code != 200) {
+                wx.redirectTo({
+                  url: '/pages/register/register',
+                })
                 app.alert({ 'content': res.data.msg });
                 return;
               }

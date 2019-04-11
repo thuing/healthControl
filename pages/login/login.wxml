@@ -13,6 +13,10 @@
     <button class='button' hover-class="button-hover" open-type="getUserInfo" bindgetuserinfo='doLogin' >
         授权登录
     </button>
+
+    <!-- <button class='button' hover-class="button-hover" open-type="getUserInfo" bindtap="openConfirm" >
+        授权登录
+    </button> -->
 </view>
  
 
