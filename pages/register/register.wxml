@@ -1,8 +1,8 @@
 <!--pages/register/register.wxml-->
 <!-- 身份选择界面 -->
 <view>
-  <button class="patient"  size="default" hover-class="button-hover" bindtap="onTapPatient">患者</button>
-  <button class="doctor"  size="default" hover-class="button-hover" bindtap="onTapDoctor">医生</button>
+  <button class="patient"  size="default" hover-class="button-hover" open-type="getUserInfo" bindtap="onTapPatient">患者</button>
+  <button class="doctor"  size="default" hover-class="button-hover" bindtap="onTapDoctor" open-type="getUserInfo">医生</button>
 </view>
 
   

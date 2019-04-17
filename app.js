@@ -11,7 +11,7 @@ App({
     //调用API从本地缓存中获取数据
     var jwt = wx.getStorageSync('jwt');
     var that = this;
-    if (!jwt) { //检查 jwt 是否存在 如果不存在调用登录
+    if (!jwt) {//检查 jwt 是否存在 如果不存在调用登录
     } else {
       this.globalData.jwt = jwt
     }
@@ -23,11 +23,6 @@ App({
     var that = this;
     // 登录
     wx.login({
-        
-        // success: res => {
-        //   // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        // }
-        // 调用 login 获取 code
         success: function (res) {
           var code = res.code;
           try {
@@ -37,6 +32,7 @@ App({
           } catch (e) {
             return false
           }
+          console.log(api_url.basic_token);
           wx.request({ // 发送请求 获取 jwt
             url: api_url.login,
             header: {
@@ -63,11 +59,18 @@ App({
                 that.globalData.jwt = res.data.token
                 that.globalData.access_token = res.data.token;
                 that.globalData.account_id = res.data.sub;
-                wx.redirectTo({
-                  url: '/pages/register/register',
-                })
+                if (app.globalData.userIdentity == "patient") {
+                  wx.redirectTo({
+                    url: '/pages/patient/patient',
+                  })
+                } else {
+                  wx.redirectTo({
+                    url: '/pages/doctor/doctor',
+                  })
+                }
               } else if (res.statusCode === 400) {
                 // 如果没有注册调用注册接口
+                console.log("register")
                 that.register(userinfo);
               } else {
                 // 提示错误信息
@@ -104,16 +107,66 @@ App({
     })
   },
   
+  register: function (e) {
+    // 注册代码
+    var that = this;
+    var userinfo = e
+    wx.login({ // 调用登录接口获取 code
+      success: function (res) {
+        var code = res.code;
+        try {
+          that.globalData.userInfo = userinfo.detail.userInfo;
+          var encryptedData = userinfo.detail.encryptedData || 'encry';
+          var iv = userinfo.detail.iv || 'iv';
+        } catch (e) {
+          return false
+        }
+        wx.request({ // 请求注册用户接口
+          url: api_url.Registered,
+          header: {
+            //Authorization: config.basic_token
+          },
+          data: {
+            username: encryptedData,
+            password: iv,
+            code: code,
+            userIdentity: app.globalData.userIdentity,
+          },
+          method: "POST",
+          success: function (res) {
+            if (res.statusCode == 201) {
+              that.login(userinfo);
+              if (app.globalData.userIdentity == "patient") {
+                wx.redirectTo({
+                  url: '/pages/patient/patient',
+                })
+              } else {
+                wx.redirectTo({
+                  url: '/pages/doctor/doctor',
+                })
+              }
+            }
+            if (res.statusCode == 401) {
+              that.register(userinfo);
+            }
+          },
+          fail: function (res) { }
+        })
+
+      }
+    })
+
+  },
+
   globalData: {
     userInfo: null,
     userIdentity: "null",
-    jwt: null
+    jwt: null,
   },
 
   //第一种底部  
   editTabBar: function () {
     //使用getCurrentPages可以获取当前加载中所有的页面对象的一个数组，数组最后一个就是当前页面。
-    console.log("the patient func is used")
     var curPageArr = getCurrentPages();    //获取加载的页面
     var curPage = curPageArr[curPageArr.length - 1];    //获取当前页面的对象
     var pagePath = curPage.route;    //当前页面url
@@ -135,7 +188,6 @@ App({
   
   //第二种底部，原理同上
   editTabBar1: function () {
-    console.log("the func is used")
     var curPageArr = getCurrentPages();
     var curPage = curPageArr[curPageArr.length - 1];
     var pagePath = curPage.route;
@@ -153,6 +205,7 @@ App({
       tabBar: tabBar
     });
   },
+
   globalData: {
     //第一种底部导航栏显示
     tabBar: {

@@ -10,7 +10,6 @@ Page({
       app.editTabBar();
     },
          
-         
     //滑动视图图片
     imgUrls: [
       '/images/医院1.png',
@@ -24,6 +23,17 @@ Page({
     duration: 500,
     circular:true
   },
+
+  onLoad: function (options) {
+    var that = this;
+    if (!app.globalData.jwt) {
+      wx.redirectTo({
+        url: '../login/login',
+      })
+      return false
+    }
+  },
+
   //患者血常规变化按钮页面跳转
   onTapBtn1() {
     wx.navigateTo({

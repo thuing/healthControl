@@ -2,10 +2,6 @@
 var app = getApp();
 
 Page({
-  onLoad: function () {
-    //加载本页面的tabBar样式
-    app.editTabBar();
-  },
 
   data: {
     //滑动视图图片
@@ -21,6 +17,30 @@ Page({
     duration: 500,
     circular: true
   },
+
+  onLoad: function (options) {
+    var that = this;
+    if (!app.globalData.jwt) {
+      wx.redirectTo({
+        url: '../register/register',
+      })
+      return false
+    }
+    if (app.globalData.userIdentity == "patient") {
+      console.log("用户身份是：" + app.globalData.userIdentity )
+      wx.redirectTo({
+        url: '/pages/patient/patient',
+      })
+      //加载患者页面的tabBar样式
+      app.editTabBar();
+    } else {
+      wx.redirectTo({
+        url: '/pages/doctor/doctor',
+      })
+      app.editTabBar1();
+    }
+  },
+
   //患者血常规变化按钮页面跳转
   onTapBtn1() {
         wx.navigateTo({
