@@ -36,7 +36,7 @@
 					"id": 0,
 					"name": "患者",
 					"pathName": "pages/patient/patient",
-					"query": "app.globalData.userIdentity = \"patient\"",
+					"query": "app.globalData.userIdentity =\"patient\"",
 					"scene": null
 				},
 				{

@@ -137,6 +137,7 @@ Page({
   },
 
 
+
   // 授权登录
   doLogin:function(e){
 
@@ -172,6 +173,13 @@ Page({
        
   },
 
+  agreeGetUser: function (e) {
+    var that = this;
+    that.setData({
+      disabled: true,
+    })
+    app.login(e);
+  },
 
 })
 

@@ -18,22 +18,29 @@ Page({
     circular: true
   },
 
+  onLoad: function () {
+    //加载患者页面的tabBar样式
+    app.editTabBar();
+  },
+
   onLoad: function (options) {
     var that = this;
     if (!app.globalData.jwt) {
       wx.redirectTo({
-        url: '../register/register',
+       url: '../register/register',
+      //  url:"../login/login",
       })
       return false
     }
-    if (app.globalData.userIdentity == "patient") {
-      console.log("用户身份是：" + app.globalData.userIdentity )
+
+    console.log("用户身份是?：" + app.globalData.userIdentity)
+    if (app.globalData.userIdentity == "patient" ) {
       wx.redirectTo({
         url: '/pages/patient/patient',
       })
       //加载患者页面的tabBar样式
       app.editTabBar();
-    } else {
+    } else if (app.globalData.userIdentity == "doctor"){
       wx.redirectTo({
         url: '/pages/doctor/doctor',
       })
@@ -49,7 +56,6 @@ Page({
   },
   //患者治疗后症状按钮页面跳转
   onTapBtn2() {
-
     var url = "https://api.douban.com/v2/movie/in_theaters";
     wx.request({
       url: url,
