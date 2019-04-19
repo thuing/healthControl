@@ -2,13 +2,12 @@
 var api_url = require("./api/api.js"); //引入api.js
 
 App({
-  globalData: {
-    userInfo: null,
-    userIdentity: 'null',
-    jwt: null,
-  },
 
   globalData: {
+    userInfo: null,
+    userIdentity: "",
+    list: [], //存放tabBar的数据
+    jwt: null,
     //第一种底部导航栏显示
     tabBar: {
       "color": "#FFFFFF",
@@ -107,11 +106,27 @@ App({
             },
             method: "POST",
             success: function (res) {
+              console.log(res);
               if (res.statusCode === 200) {
                 // 得到 jwt 后存储到 storage，
                 wx.showToast({
                   title: '登录成功',
-                  icon: 'success'
+                  icon: 'success',
+                  duration: 2000,
+                  success: function () {
+                    setTimeout(function () {
+                      console.log("患者身份是" + userType);
+                      if (userType == "patient") {
+                        wx.redirectTo({
+                          url: '/pages/patient/patient',
+                        })
+                      } else {
+                        wx.redirectTo({
+                          url: '/pages/doctor/doctor',
+                        })
+                      }
+                    }, 1000)// 延时时间
+                  }
                 });
                 wx.setStorage({
                   key: "jwt",
@@ -122,16 +137,6 @@ App({
                 that.globalData.access_token = res.data.token;
                 that.globalData.account_id = res.data.sub;
                 
-                console.log("患者身份是"+userType);
-                if (userType == "patient") {
-                  wx.redirectTo({
-                    url: '/pages/patient/patient',
-                  })
-                } else {
-                  wx.redirectTo({
-                    url: '/pages/doctor/doctor',
-                  })
-                }
               } else if (res.statusCode === 400) {
                 // 如果没有注册调用注册接口
                 console.log("register")
@@ -149,26 +154,26 @@ App({
           })
         }
       })
-    // // 获取用户信息
-    // wx.getSetting({
-    //   success: res => {
-    //     if (res.authSetting['scope.userInfo']) {
-    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-    //       wx.getUserInfo({
-    //         success: res => {
-    //           // 可以将 res 发送给后台解码出 unionId
-    //           this.globalData.userInfo = res.userInfo
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              this.globalData.userInfo = res.userInfo
 
-    //           // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-    //           // 所以此处加入 callback 以防止这种情况
-    //           if (this.userInfoReadyCallback) {
-    //             this.userInfoReadyCallback(res)
-    //           }
-    //         }
-    //       })
-    //     }
-    //   }
-    // })
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+            }
+          })
+        }
+      }
+    })
   },
   
   register: function (e) {
@@ -201,6 +206,7 @@ App({
             method: "POST",
             success: function (res) {
             // 注册成功
+            console.log(res);
             if (res.statusCode == 201) {
               that.login(userinfo);
               if (userType == "patient") {

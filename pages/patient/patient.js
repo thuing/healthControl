@@ -1,5 +1,5 @@
 // pages/patient/patient.js
-var app = getApp();
+const app = getApp();
 
 Page({
 
@@ -15,15 +15,14 @@ Page({
     autoplay: true,
     interval: 2000,
     duration: 500,
-    circular: true
-  },
-
-  onLoad: function () {
-    //加载患者页面的tabBar样式
-    app.editTabBar();
+    circular: true,
   },
 
   onLoad: function (options) {
+
+    //加载患者页面的tabBar样式
+    app.editTabBar();
+
     var that = this;
     if (!app.globalData.jwt) {
       wx.redirectTo({
@@ -33,19 +32,28 @@ Page({
       return false
     }
 
-    console.log("用户身份是?：" + app.globalData.userIdentity)
-    if (app.globalData.userIdentity == "patient" ) {
-      wx.redirectTo({
-        url: '/pages/patient/patient',
+    console.log("loadfunc");
+    var userIdentity = app.globalData.userIdentity;
+    console.log("用户身份是?：" + userIdentity)
+    if (userIdentity == "patient") {
+      wx.redirectTo({ 
+       url: '/pages/patient/patient',
       })
       //加载患者页面的tabBar样式
       app.editTabBar();
-    } else if (app.globalData.userIdentity == "doctor"){
+    } else if (userIdentity == "doctor") {
       wx.redirectTo({
         url: '/pages/doctor/doctor',
       })
       app.editTabBar1();
-    }
+   }
+
+    
+  },
+
+ 
+  onShow: function () {
+    this.onLoad();
   },
 
   //患者血常规变化按钮页面跳转

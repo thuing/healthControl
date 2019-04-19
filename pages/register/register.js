@@ -1,5 +1,5 @@
 // pages/register/register.js
-const app = getApp()
+const app = getApp();
 
 Page({
   data: {
